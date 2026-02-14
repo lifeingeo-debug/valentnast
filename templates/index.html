@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dota 2 Hero Ranker | Choose Your Legend</title>
+    <meta name="description"
+        content="Pick your favorite Dota 2 heroes in a tournament-style ranking system. Selection based on your personal preference.">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app" class="app-container">
+        <!-- Progress Bar -->
+        <div class="header">
+            <h1 class="title">Dota 2 <span class="highlight">Hero Ranker</span></h1>
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar" style="width: 0%"></div>
+            </div>
+            <p id="round-info" class="round-info">Round 1</p>
+        </div>
+
+        <!-- Main Interaction Area -->
+        <main id="main-content" class="battle-ground">
+            <div class="hero-selection-container">
+                <div id="hero-left" class="hero-card" data-side="left">
+                    <div class="card-inner">
+                        <div class="image-wrapper">
+                            <img src="" alt="Hero Left" id="img-left">
+                            <div class="overlay"></div>
+                        </div>
+                        <h2 id="name-left" class="hero-name">Loading...</h2>
+                    </div>
+                </div>
+
+                <div class="vs-container">
+                    <span class="vs-text">VS</span>
+                </div>
+
+                <div id="hero-right" class="hero-card" data-side="right">
+                    <div class="card-inner">
+                        <div class="image-wrapper">
+                            <img src="" alt="Hero Right" id="img-right">
+                            <div class="overlay"></div>
+                        </div>
+                        <h2 id="name-right" class="hero-name">Loading...</h2>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Final Result Screen (Hidden by default) -->
+        <div id="result-screen" class="result-screen hidden">
+            <div class="winner-announcement">
+                <h1 class="winner-title">Your Absolute Legend</h1>
+                <div class="winner-card" id="winner-card">
+                    <img id="winner-img" src="" alt="Winner">
+                    <h2 id="winner-name">Hero Name</h2>
+                </div>
+                <button id="restart-btn" class="restart-btn">Rank Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+
+</html>
